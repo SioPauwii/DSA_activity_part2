@@ -1,7 +1,8 @@
 import math
-def PascalsTri(rows):
-    triShape = []
 
+def PascalsTri(rows):
+
+    triShape = []
     for i in range(rows):
         row = [math.comb(i, k) for k in range (i + 1)]
         triShape.append(row)
