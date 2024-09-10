@@ -1,17 +1,16 @@
+import math
 def PascalsTri(rows):
-    triangle = []
+    triShape = []
 
     for i in range(rows):
-        xAxis = [1] * (i + 1)
-        for j in range(1, i):
-            xAxis[j] = triangle[i - 1][j - 1] + triangle[i - 1][j]
-        triangle.append(xAxis)
+        row = [math.comb(i, k) for k in range (i + 1)]
+        triShape.append(row)
 
-    maxRowLen = len(str(triangle[-1][len(triangle[-1]) // 2]))
+    maxRowLen = len(str(triShape[-1][len(triShape[-1]) // 2]))
 
     baseLen = rows * (maxRowLen + 1) - 1
 
-    for xAxis in triangle:
+    for xAxis in triShape:
         stringXaxis = ' '.join(f'{num:>{maxRowLen}}' for num in xAxis)
         startAlign = ' ' * ((baseLen - len(stringXaxis)) // 2)
         print(startAlign + stringXaxis)
