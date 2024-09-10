@@ -15,7 +15,7 @@ def quinaryConvert(n):
         n //= 5
     return base5Digit
 
-print('Add two base5Digit strings')
+print('Add two quinary strings')
 quinary1 = input('Enter your first base5Digit string: ')
 quinary2 = input('Enter your second base5Digit string: ')
 print(f'There sum is {quinAdd(quinary1, quinary2)}')
